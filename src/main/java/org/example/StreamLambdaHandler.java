@@ -13,7 +13,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 
-public class StreamLambdaHandler implements RequestStreamHandler {
+public class StreamLambdaHandler /*implements RequestStreamHandler*/ {
     private static SpringBootLambdaContainerHandler<AwsProxyRequest, AwsProxyResponse> handler;
     static {
         try {
@@ -25,9 +25,9 @@ public class StreamLambdaHandler implements RequestStreamHandler {
         }
     }
 
-    @Override
-    public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context)
-            throws IOException {
-        handler.proxyStream(inputStream, outputStream, context);
-    }
+//    @Override
+//    public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context)
+//            throws IOException {
+//        handler.proxyStream(inputStream, outputStream, context);
+//    }
 }

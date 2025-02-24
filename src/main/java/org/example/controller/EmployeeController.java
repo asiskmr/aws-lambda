@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
-
 @RestController
 @RequestMapping("/v1/employees")
 public class EmployeeController {
@@ -24,31 +21,31 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	@GetMapping( produces = "application/json")
+	@GetMapping("")
 	public List<EmployeeVo> getEmployees() {
 		return employeeService.list();
 	}
 
-	@GetMapping(value = "/{id}", produces = "application/json")
+	@GetMapping("/{id}")
 	public EmployeeVo getById(@PathVariable Integer id) {
 		return employeeService.find(id);
 	}
 	
-//	@PostMapping("/")
-//	public EmployeeVo save(@RequestBody EmployeeVo employeeVo) {
-//		return employeeService.save(employeeVo);
-//	}
-//
-//	@PutMapping("/")
-//	public EmployeeVo update(@RequestBody EmployeeVo employeeVo) {
-//		return employeeService.save(employeeVo);
-//	}
-//
-//	@DeleteMapping("/")
-//	public String delete(@PathVariable Integer id) {
-//		employeeService.delete(id);
-//		return "{result:\"Record has been deleted\"}";
-//	}
-//
+	@PostMapping("")
+	public EmployeeVo save(@RequestBody EmployeeVo employeeVo) {
+		return employeeService.save(employeeVo);
+	}
+
+	@PutMapping("")
+	public EmployeeVo update(@RequestBody EmployeeVo employeeVo) {
+		return employeeService.save(employeeVo);
+	}
+
+	@DeleteMapping("/{id}")
+	public String delete(@PathVariable Integer id) {
+		employeeService.delete(id);
+		return "{\"result\":\"Record has been deleted\"}";
+	}
+
 	
 }

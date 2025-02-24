@@ -6,6 +6,7 @@ package org.example.dto;
 //import jakarta.persistence.GenerationType;
 //import jakarta.persistence.Id;
 //import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,30 +16,30 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-//@Entity
-//@Table(name = "employee", schema = "mydb")
+@Entity
+@Table(name = "employee", schema = "mydb")
 public class EmployeeVo {
 
-	//@Id
-	//@GeneratedValue(strategy=GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Integer id;
 	
-	//@Column(name = "name", length = 100)
+	@Column(name = "name", length = 100)
 	private String name;
 	
-	//@Column(name = "age")
+	@Column(name = "age")
 	private Integer age;
 	
-	//@Column(name = "gender", length = 1)
+	@Column(name = "gender", length = 1)
 	private String gender;
 	
-	//@Column(name = "department", length = 30)
+	@Column(name = "department", length = 30)
 	private String department;
 	
-	//@Column(name = "yearOfJoining")
+	@Column(name = "yearOfJoining")
 	private Integer yearOfJoining;
 	
-	//@Column(name = "salary")
+	@Column(name = "salary")
 	private Integer salary;
 
 }

@@ -9,8 +9,8 @@ import java.util.Optional;
 
 
 //@Component
-@Repository
-public class EmployeeDaoImpl implements EmployeeDao
+//@Repository
+public class EmployeeDaoImpl /*implements EmployeeDao*/
 {
 
 	private List<EmployeeVo> employeeList;
@@ -41,13 +41,13 @@ public class EmployeeDaoImpl implements EmployeeDao
 		return employeeList;
 	}
 
-	@Override
-	public List<EmployeeVo> findAll() {
-		return employeeList;
-	}
-
-	@Override
-	public Optional<EmployeeVo> findById(Integer id) {
-		return Optional.ofNullable(employeeList.get(0));
-	}
+//	@Override
+//	public List<EmployeeVo> findAll() {
+//		return employeeList;
+//	}
+//
+//	@Override
+//	public Optional<EmployeeVo> findById(Integer id) {
+//		return Optional.ofNullable(employeeList.get(0));
+	//}
 }
